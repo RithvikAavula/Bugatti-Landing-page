@@ -1,0 +1,56 @@
+Create a visually stunning, ultra-luxury Bugatti car website with modern, high-end animations and cinematic visuals. The design should reflect power, elegance, and speed, inspired by Bugatti’s identity — sleek curves, precision, and luxury craftsmanship.
+
+Design style: Futuristic, dark mode theme with deep black, metallic blue, and electric cyan accents. Use neon highlights, motion parallax, smooth glassmorphism effects, and 3D transitions to create a feeling of depth and luxury.
+
+Homepage:
+
+Hero section with 3D model or cinematic video of a Bugatti car (like Chiron or Bolide) rotating in slow motion.
+
+Bold title text like “Unleash the Power of Perfection” with a glowing light-trail animation.
+
+Smooth scrolling and hover-based animations that reveal performance stats (horsepower, top speed, 0-100 acceleration).
+
+Sections:
+
+About Bugatti: Elegant storytelling with horizontal scrolling and text reveal animations.
+
+Models Showcase: Interactive 3D gallery with car model cards — each expands on hover with a background morph effect.
+
+Performance Section: Animated speedometer and stat counters.
+
+Design & Innovation: Split-screen animations — left shows interior details, right transitions through concept visuals.
+
+Contact / Test Drive: Minimalistic, elegant form with neon borders and glass blur background.
+
+Animations & Effects:
+
+GSAP and Framer Motion for scroll and reveal animations.
+
+Lottie animations for icon transitions.
+
+Hover-based glow and motion effects on car images.
+
+Subtle engine rev sound effect when hero animation loads (optional).
+
+Smooth transitions between pages with fade and slide motion.
+
+Technical Stack (if coding):
+
+React + Next.js
+
+Tailwind CSS with Framer Motion
+
+Three.js (for 3D car models)
+
+GSAP for parallax and scroll-triggered animations
+
+Tone & Feel:
+
+Elegant, bold, and cinematic
+
+Premium luxury brand energy
+
+Emphasis on speed, precision, and artistry
+
+Extra touch:
+Add a “Night Mode Garage” section where the car glows with soft reflections and ambient lighting changes when hovering or dragging.
