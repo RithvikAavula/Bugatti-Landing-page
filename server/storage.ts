@@ -1,37 +1,63 @@
-import { type User, type InsertUser } from "@shared/schema";
+import { 
+  type Configuration, 
+  type InsertConfiguration,
+  type TestDriveRequest,
+  type InsertTestDriveRequest,
+} from "@shared/schema";
 import { randomUUID } from "crypto";
 
-// modify the interface with any CRUD methods
-// you might need
-
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  createConfiguration(config: InsertConfiguration): Promise<Configuration>;
+  getConfiguration(id: string): Promise<Configuration | undefined>;
+  getAllConfigurations(): Promise<Configuration[]>;
+  
+  createTestDriveRequest(request: InsertTestDriveRequest): Promise<TestDriveRequest>;
+  getAllTestDriveRequests(): Promise<TestDriveRequest[]>;
 }
 
 export class MemStorage implements IStorage {
-  private users: Map<string, User>;
+  private configurations: Map<string, Configuration>;
+  private testDriveRequests: Map<string, TestDriveRequest>;
 
   constructor() {
-    this.users = new Map();
+    this.configurations = new Map();
+    this.testDriveRequests = new Map();
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
+  async createConfiguration(insertConfig: InsertConfiguration): Promise<Configuration> {
     const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+    const shareUrl = `${id.substr(0, 8)}`;
+    const config: Configuration = { 
+      ...insertConfig, 
+      id,
+      shareUrl,
+      createdAt: new Date(),
+    };
+    this.configurations.set(id, config);
+    return config;
+  }
+
+  async getConfiguration(id: string): Promise<Configuration | undefined> {
+    return this.configurations.get(id);
+  }
+
+  async getAllConfigurations(): Promise<Configuration[]> {
+    return Array.from(this.configurations.values());
+  }
+
+  async createTestDriveRequest(insertRequest: InsertTestDriveRequest): Promise<TestDriveRequest> {
+    const id = randomUUID();
+    const request: TestDriveRequest = {
+      ...insertRequest,
+      id,
+      createdAt: new Date(),
+    };
+    this.testDriveRequests.set(id, request);
+    return request;
+  }
+
+  async getAllTestDriveRequests(): Promise<TestDriveRequest[]> {
+    return Array.from(this.testDriveRequests.values());
   }
 }
 

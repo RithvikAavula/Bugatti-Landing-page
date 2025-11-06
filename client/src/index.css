@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LIGHT MODE */
+/* LIGHT MODE - Not used for Bugatti, but keeping for compatibility */
 :root {
   --button-outline: rgba(0,0,0, .10);
   --badge-outline: rgba(0,0,0, .05);
@@ -14,71 +14,71 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --background: 0 0% 98%;
+  --background: 0 0% 4%;
 
-  --foreground: 222 15% 12%;
+  --foreground: 210 30% 92%;
 
-  --border: 220 4% 88%;
+  --border: 220 5% 12%;
 
-  --card: 0 0% 96%;
+  --card: 220 5% 6%;
 
-  --card-foreground: 222 15% 12%;
+  --card-foreground: 210 30% 92%;
 
-  --card-border: 220 4% 90%;
+  --card-border: 220 5% 10%;
 
-  --sidebar: 220 3% 94%;
+  --sidebar: 220 5% 8%;
 
-  --sidebar-foreground: 222 15% 12%;
+  --sidebar-foreground: 210 30% 92%;
 
-  --sidebar-border: 220 4% 86%;
+  --sidebar-border: 220 5% 14%;
 
-  --sidebar-primary: 217 91% 28%;
+  --sidebar-primary: 189 94% 55%;
 
-  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-primary-foreground: 220 6% 4%;
 
-  --sidebar-accent: 220 5% 88%;
+  --sidebar-accent: 220 8% 14%;
 
-  --sidebar-accent-foreground: 222 15% 18%;
+  --sidebar-accent-foreground: 210 30% 92%;
 
-  --sidebar-ring: 217 91% 45%;
+  --sidebar-ring: 189 94% 55%;
 
-  --popover: 0 0% 92%;
+  --popover: 220 6% 10%;
 
-  --popover-foreground: 222 15% 12%;
+  --popover-foreground: 210 30% 92%;
 
-  --popover-border: 220 4% 84%;
+  --popover-border: 220 5% 16%;
 
-  --primary: 217 91% 28%;
+  --primary: 189 94% 55%;
 
-  --primary-foreground: 210 40% 98%;
+  --primary-foreground: 220 6% 4%;
 
-  --secondary: 220 6% 86%;
+  --secondary: 220 8% 16%;
 
-  --secondary-foreground: 222 15% 18%;
+  --secondary-foreground: 210 30% 92%;
 
-  --muted: 220 8% 90%;
+  --muted: 220 8% 12%;
 
-  --muted-foreground: 222 12% 38%;
+  --muted-foreground: 210 20% 68%;
 
-  --accent: 220 10% 88%;
+  --accent: 220 10% 14%;
 
-  --accent-foreground: 222 15% 18%;
+  --accent-foreground: 210 30% 92%;
 
   --destructive: 0 84% 32%;
 
   --destructive-foreground: 0 0% 98%;
 
-  --input: 220 8% 72%;
-  --ring: 217 91% 45%;
-  --chart-1: 217 91% 28%;
-  --chart-2: 189 94% 35%;
-  --chart-3: 142 76% 32%;
-  --chart-4: 43 96% 38%;
-  --chart-5: 27 87% 42%;
+  --input: 220 8% 24%;
+  --ring: 189 94% 55%;
+  --chart-1: 189 94% 60%;
+  --chart-2: 217 91% 55%;
+  --chart-3: 142 76% 58%;
+  --chart-4: 43 96% 62%;
+  --chart-5: 27 87% 65%;
 
-  --font-sans: Open Sans, sans-serif;
+  --font-sans: 'Exo 2', 'Rajdhani', system-ui, sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: Menlo, monospace;
+  --font-mono: 'Orbitron', monospace;
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 2px 0px 0px hsl(220 8% 20% / 0.02);
   --shadow-xs: 0px 2px 0px 0px hsl(220 8% 20% / 0.04);
@@ -129,8 +129,8 @@
   --opaque-button-border-intensity: 9;  /* In terms of percentages */
 
   /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(255,255,255, .04);
-  --elevate-2: rgba(255,255,255, .09);
+  --elevate-1: rgba(14, 165, 233, .08);
+  --elevate-2: rgba(14, 165, 233, .15);
 
   --background: 220 6% 4%;
 
@@ -150,9 +150,9 @@
 
   --sidebar-border: 220 5% 14%;
 
-  --sidebar-primary: 217 91% 28%;
+  --sidebar-primary: 189 94% 55%;
 
-  --sidebar-primary-foreground: 210 40% 98%;
+  --sidebar-primary-foreground: 220 6% 4%;
 
   --sidebar-accent: 220 8% 14%;
 
@@ -166,9 +166,9 @@
 
   --popover-border: 220 5% 16%;
 
-  --primary: 217 91% 28%;
+  --primary: 189 94% 55%;
 
-  --primary-foreground: 210 40% 98%;
+  --primary-foreground: 220 6% 4%;
 
   --secondary: 220 8% 16%;
 
@@ -188,8 +188,8 @@
 
   --input: 220 8% 24%;
   --ring: 189 94% 55%;
-  --chart-1: 217 91% 55%;
-  --chart-2: 189 94% 60%;
+  --chart-1: 189 94% 60%;
+  --chart-2: 217 91% 55%;
   --chart-3: 142 76% 58%;
   --chart-4: 43 96% 62%;
   --chart-5: 27 87% 65%;
@@ -241,6 +241,10 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  canvas {
+    outline: none;
   }
 }
 
