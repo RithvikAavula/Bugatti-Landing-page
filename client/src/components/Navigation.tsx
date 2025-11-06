@@ -9,22 +9,23 @@ export function Navigation() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/configurator", label: "Configurator" },
     { href: "/models", label: "Models" },
     { href: "/heritage", label: "Heritage" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/30" style={{ backdropFilter: "blur(20px)", backgroundColor: "rgba(10, 10, 10, 0.8)" }}>
+  <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-display font-bold tracking-wider">
-              <span className="bg-gradient-to-r from-primary via-cyan-400 to-primary bg-clip-text text-transparent animate-shimmer bg-[length:200%_auto]">
-                BUGATTI
-              </span>
-            </div>
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center space-x-2" aria-label="Bugatti Home">
+            <img
+              src="https://res.cloudinary.com/dfnpgl0bb/image/upload/e_background_removal/v1762438444/Bugatti_Logo_on_Bold_Black_Background_pg7ogu.png"
+              alt="Bugatti Logo"
+              className="h-12 sm:h-16 md:h-20 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+              loading="eager"
+              decoding="async"
+            />
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -46,12 +47,12 @@ export function Navigation() {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/configurator">
+            <Link href="/models">
               <Button 
                 className="relative overflow-hidden group"
                 data-testid="button-configure"
               >
-                <span className="relative z-10">Configure Your Bugatti</span>
+                <span className="relative z-10">Explore Models</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-20 transition-opacity" />
               </Button>
             </Link>
@@ -71,7 +72,7 @@ export function Navigation() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border/30" style={{ backgroundColor: "rgba(10, 10, 10, 0.95)" }}>
+        <div className="md:hidden bg-background/60 backdrop-blur-sm">
           <div className="px-4 pt-2 pb-4 space-y-2">
             {navLinks.map((link) => (
               <Link
@@ -88,9 +89,9 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link href="/configurator">
+            <Link href="/models">
               <Button className="w-full" onClick={() => setMobileMenuOpen(false)} data-testid="button-mobile-configure">
-                Configure Your Bugatti
+                Explore Models
               </Button>
             </Link>
           </div>

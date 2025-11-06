@@ -6,8 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import Home from "@/pages/Home";
-import Configurator from "@/pages/Configurator";
-import Models from "@/pages/Models";
+import Gallery from "./pages/Gallery";
+import ModelDetail from "./pages/ModelDetail";
 import Heritage from "@/pages/Heritage";
 import Contact from "@/pages/Contact";
 import SharedConfig from "@/pages/SharedConfig";
@@ -17,8 +17,10 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/configurator" component={Configurator} />
-      <Route path="/models" component={Models} />
+  <Route path="/configurator" component={Gallery} />
+  <Route path="/gallery" component={Gallery} />
+    <Route path="/gallery/:modelId" component={ModelDetail} />
+    <Route path="/models" component={Gallery} />
       <Route path="/heritage" component={Heritage} />
       <Route path="/contact" component={Contact} />
       <Route path="/shared/:id" component={SharedConfig} />

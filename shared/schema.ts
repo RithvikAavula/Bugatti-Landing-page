@@ -13,6 +13,7 @@ export const configurations = pgTable("configurations", {
   carbonFiberPackage: text("carbon_fiber_package").notNull(),
   interiorMaterial: text("interior_material").notNull(),
   stitchingColor: text("stitching_color").notNull(),
+  emblemStyle: text("emblem_style").notNull(),
   price: integer("price").notNull(),
   shareUrl: text("share_url"),
   createdAt: timestamp("created_at").defaultNow(),
@@ -98,6 +99,40 @@ export const stitchingColors = [
   { id: "yellow", name: "Yellow", hex: "#eab308" },
   { id: "orange", name: "Orange", hex: "#f97316" },
   { id: "black", name: "Black", hex: "#0a0a0a" },
+];
+
+// Emblem / Logo Styles
+export const emblemStyles = [
+  {
+    id: "original",
+    name: "Original Style",
+    description: "Classic EB-inspired badge with rich contrast",
+    preview: "/emblems/original.svg",
+  },
+  {
+    id: "minimal",
+    name: "Modern Minimal",
+    description: "Sleek, flat monochrome variant",
+    preview: "/emblems/minimal.svg",
+  },
+  {
+    id: "neon",
+    name: "Futuristic Neon",
+    description: "Glow edges and tech vibe",
+    preview: "/emblems/neon.svg",
+  },
+  {
+    id: "luxury3d",
+    name: "3D Luxury",
+    description: "Chrome texture with deep reflections",
+    preview: "/emblems/luxury3d.svg",
+  },
+  {
+    id: "custom",
+    name: "Custom Creative",
+    description: "Personalized monogram variant",
+    preview: "/emblems/custom.svg",
+  },
 ];
 
 export const bugattiModels = [

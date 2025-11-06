@@ -25,11 +25,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/configurator" className="text-foreground/70 hover:text-primary transition-colors">
-                  Configurator
-                </Link>
-              </li>
-              <li>
                 <Link href="/heritage" className="text-foreground/70 hover:text-primary transition-colors">
                   Heritage
                 </Link>
